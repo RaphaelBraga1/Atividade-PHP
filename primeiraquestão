@@ -1,0 +1,71 @@
+<?php
+ 
+  $nmr1 = 0;
+  $nmr2 = 0;
+  $nmr3 = 0;
+  $nmr4 = 0;
+  $nmr5 = 0;
+  $nmr6 = 0;
+  $nmr7 = 0;
+  $nmr8 = 0;
+  $nmr9 = 0;
+  $nmr10 = 0;
+  $resultado = 0;
+  $calcular = 'somar';
+
+  if (isset($_GET['nmr1'], $_GET['nmr2'], $_GET['nmr3'], $_GET['nmr4'], $_GET['nmr5'], $_GET['nmr6'], $_GET['nmr7'], $_GET['nmr8'], $_GET['nmr9'], $_GET['nmr10'], $_GET['calcular'])) {
+    
+    $nmr1 = $_GET['nmr1'];
+    $nmr2 = $_GET['nmr2'];
+    $nmr3 = $_GET['nmr3'];
+    $nmr4 = $_GET['nmr4'];
+    $nmr5 = $_GET['nmr5'];
+    $nmr6 = $_GET['nmr6'];
+    $nmr7 = $_GET['nmr7'];
+    $nmr8 = $_GET['nmr8'];
+    $nmr9 = $_GET['nmr9'];
+    $nmr10 = $_GET['nmr10'];
+    $calcular = $_GET['calcular'];
+
+
+      switch($calcular)  {
+        case 'media':
+            $resultado = $nmr1 + $nmr2 + $nmr3 + $nmr4 + $nmr5 + $nmr6 + $nmr7 + $nmr8 + $nmr9 + $nmr10 / 10;
+            break;
+        case 'somar':
+            $resultado = $nmr1 + $nmr2 + $nmr3 + $nmr4 + $nmr5 + $nmr6 + $nmr7 + $nmr8 + $nmr9 + $nmr10;
+            break;
+
+      }
+    }
+?>  
+
+<html>
+<head>
+  <title>10 Números</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <form>
+    Informe uma sequência de 10 numeros desejados <br />
+    <input type="number" name="nmr1" required /><br />
+    <input type="number" name="nmr2" required /><br />
+    <input type="number" name="nmr3" required /><br />
+    <input type="number" name="nmr4" required /><br />
+    <input type="number" name="nmr5" required /><br />
+    <input type="number" name="nmr6" required /><br />
+    <input type="number" name="nmr7" required /><br />
+    <input type="number" name="nmr8" required /><br />
+    <input type="number" name="nmr9" required /><br />
+    <input type="number" name="nmr10" required /><br />
+    <select name="calcular">
+      <option value="somar">Somar</option>
+      <option value="media">Média Aritmética</option>
+    </select>
+    <br /><br />
+    <input type="submit" name="Calcular"/>
+    <br /><br />
+    <p> O resultado é <?= $resultado ?></p>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+  </form>
+</body>
