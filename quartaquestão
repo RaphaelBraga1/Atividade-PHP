@@ -1,0 +1,37 @@
+<?php 
+
+  if (isset($_GET['nmr1'], $_GET['nmr2'], $_GET['nmr3'])){
+  
+  $nmr1 = $_GET['nmr1'];
+  $nmr2 = $_GET['nmr2'];
+  $nmr3 = $_GET['nmr3'];
+}
+  if( ($nmr1+$nmr2>$nmr3)&&($nmr1+$nmr3>$nmr2)&&($nmr2+$nmr3>$nmr3) ){
+   if($nmr1==$nmr2 && $nmr2==$nmr3)
+    echo "Triângulo é equilátero";
+   elseif ($nmr1==$nmr2 || $nmr1==$nmr3 || $nmr2==$nmr3)
+    echo "Triângulo é isósceles";
+   else
+    echo "Triângulo é escaleno";
+  }else
+   echo "O triângulo não existe";
+?>
+
+<html>
+<head>
+  <title>Seu triângulo é...</title>
+</head>
+  
+<body>
+  <form>
+   Informe a médida dos 3 lados do triângulo <br />
+    <input type="number" name="nmr1" required /><br />
+    <input type="number" name="nmr2" required /><br />
+    <input type="number" name="nmr3" required /><br />
+    </select>
+    <br /><br />
+    <input type="submit" name="Calcular"/>
+    <br /><br />
+
+  </form>
+</body>
