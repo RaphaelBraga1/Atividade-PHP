@@ -1,0 +1,55 @@
+<?php
+  
+  $nmr1 = 0;
+  $nmr2 = 0;
+  $resultado = 0;
+  $calcular = 'somar';
+
+  if (isset($_GET['nmr1'], $_GET['nmr2'], $_GET['calcular'])) {
+    $nmr1 = $_GET['nmr1'];
+    $nmr2 = $_GET['nmr2'];
+    $calcular = $_GET['calcular'];
+
+
+      switch($calcular)  {
+        case 'somar':
+            $resultado = $nmr1 + $nmr2;
+            break;
+        case 'subtrair':
+            $resultado = $nmr1 - $nmr2;
+            break;
+        case 'multiplicar':
+            $resultado = $nmr1 * $nmr2;
+            break;
+        case 'dividir':
+            $resultado = $nmr1 / $nmr2;
+            break;
+
+      }
+    }
+?>  
+
+<html>
+<head>
+  <title>Calculadora</title>
+  
+</head>
+<body>
+  <form>
+    Digite o primeiro número <br />
+    <input type="number" name="nmr1" /><br />
+    Digite o segundo número <br />
+    <input type="number" name="nmr2" /><br />
+    <select name="calcular">
+      <option value="somar">Somar</option>
+      <option value="subtrair">Subtrair</option>
+      <option value="multiplicar">Multiplicar</option>
+      <option value="dividir">Dividir</option>
+    </select>
+    <br /><br />
+    <input type="submit" name="Calcular"/>
+    <br /><br />
+    <p> O resultado é <?= $resultado ?></p>
+
+  </form>
+</body>
